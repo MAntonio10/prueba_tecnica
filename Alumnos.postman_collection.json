@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "72be3aed-b82a-46dc-9d7c-0ea7ea501ef5",
+		"name": "Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27663679",
+		"_collection_link": "https://speeding-crater-944706.postman.co/workspace/Pruebas~dcdc72d8-64e9-4eff-ac5d-de1baab56eae/collection/27663679-72be3aed-b82a-46dc-9d7c-0ea7ea501ef5?action=share&source=collection_link&creator=27663679"
+	},
+	"item": [
+		{
+			"name": "Obtener Alumnos por Grado",
+			"item": [
+				{
+					"name": "obtener",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "prueba",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/consultar-alumno/3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"consultar-alumno",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear Alumno",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "prueba",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Nombre\": \"Carlos Cortave\",\r\n  \"FechaNacimiento\": \"2008-01-10\",\r\n  \"NombrePadre\": \"Wilson Vásquez\",\r\n  \"NombreMadre\": \"Angelica Jerónimo\",\r\n  \"IdGrado\": 3,\r\n  \"Seccion\": \"B\",\r\n  \"FechaIngreso\": \"2025-06-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/crear-alumno",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"crear-alumno"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

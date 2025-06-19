@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Alumno {
+  Id              Int      @id @default(autoincrement())
+  Nombre          String
+  FechaNacimiento DateTime
+  NombrePadre     String
+  NombreMadre     String
+  IdGrado         Int
+  Seccion         String
+  FechaIngreso    DateTime
+
+  Grado Grado @relation(fields: [IdGrado], references: [Id])
+}
+
+model Grado {
+  Id      Int      @id @default(autoincrement())
+  Nombre  String
+  alumnos Alumno[]
+}
